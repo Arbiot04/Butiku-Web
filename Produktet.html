@@ -8,7 +8,7 @@
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="start">
      <div class="logo">
          <a href="#"><i class="fas fa-shopping-cart"></i> Adi Boutique</a>
     </div>
@@ -20,43 +20,44 @@
                     </ul>
                 </div>
                 <div class="user-actions">
-                    <a href="#"><i class="fas fa-user"></i> Login</a>
+                    <a href="signup.html"><i class="fas fa-user"></i> Login</a>
                     <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
                 </div>
             </nav>
             
     <section id="produkti" class="selection-p1">
-   <div class="first-img">
+   <!--<div class="first-img">
     <img src="https://static.pullandbear.net/2/photos//2023/I/0/2/p/3684/507/833/3684507833_2_4_8.jpg?t=1698657995681&imwidth=1125"width="100%" id="fig1" alt="">
-        <div class="small-imgs">
-            <div class="img-small">
-                <img src="https://static.pullandbear.net/2/photos//2023/I/0/2/p/7686/509/833/7686509833_2_2_8.jpg?t=1688975953823&imwidth=1125" width="100%" id="small-fig"alt="">
-            </div>
-            <div class="img-small">
-                <img src="https://static.pullandbear.net/2/photos//2024/V/0/1/p/3390/355/707/3390355707_2_1_8.jpg?t=1700667710546&imwidth=1125"width="100%" id="small-fig" alt="">
-            </div>
-            <div class="img-small">
-                <img src="https://static.pullandbear.net/2/photos//2023/I/0/1/p/7712/413/802/7712413802_2_1_8.jpg?t=1698074933348&imwidth=1125"width="100%" id="small-fig" alt="">
-            </div>
-            <div class="img-small">
-                <img src="https://static.pullandbear.net/2/photos//2024/V/0/1/p/7245/360/833/7245360833_2_1_8.jpg?t=1699539241661&imwidth=1125"width="100%" id="small-fig" alt="">
-            </div>
-        </div>
    </div> 
    <div class="details-product">
     <h4>Man Pants</h4>
     <h2>11.22$</h2>
-    <select >
-        <option >Select Your Size</option>
-        <option >Large</option>
-        <option >Medium</option>
-        <option >Small</option>
-    </select>
-    <input type="number" value="1">
     <button>Add To Cart</button>
     <h4>Details</h4>
     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nam hic amet deserunt, temporibus exercitationem qui mollitia doloribus ipsa facilis culpa itaque vel ullam veniam, numquam velit officiis optio doloremque!</span>
-   </div>
+   </div>-->
+   <div class="first-img" onclick="showProductDetails('product1')">
+    <img src="https://static.pullandbear.net/2/photos//2023/I/0/2/p/3684/507/833/3684507833_2_4_8.jpg?t=1698657995681&imwidth=1125" width="100%" alt="">
+</div>
+<div  id="product1" class="details-product">
+    <h4>Man Pants</h4>
+    <h2>11.22$</h2>
+    <button onclick="addToCart('Man Pants', 11.22)">Add To Cart</button>
+    <h4>Details</h4>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nam hic amet deserunt, temporibus exercitationem qui mollitia doloribus ipsa facilis culpa itaque vel ullam veniam, numquam velit officiis optio doloremque!</span>
+</div>
+
+
+<div class="first-img" onclick="showProductDetails('product1')">
+    <img src="https://static.pullandbear.net/2/photos//2023/I/0/2/p/8686/518/922/8686518922_2_1_8.jpg?t=1690808671466&imwidth=1125" alt="">
+</div>
+<div  id="product2" class="details-product">
+    <h4>Man Pants</h4>
+    <h2>112567$</h2>
+    <button onclick="addToCart('Man Pants', 12345)">Add To Cart</button>
+    <h4>Details</h4>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nam hic amet deserunt, temporibus exercitationem qui mollitia doloribus ipsa facilis culpa itaque vel ullam veniam, numquam velit officiis optio doloremque!</span>
+</div>
     </section>
 
    <section id="newsletter"class="selection-p1 section-m1">
@@ -90,16 +91,18 @@
         
     </div>
    </footer>
+   <script>
+    function showProductDetails(productId) {
+        const productDetails = document.getElementById(productId);
+        productDetails.style.display = 'block';
+    }
 
-    <script>
-        var fig1 = document.getElementById("fig1");
-        var smallImgs = document.querySelectorAll(".img-small");
+    function addToCart(productName, price) {
+        // Implement your logic for adding the product to the cart
+        alert(`Added ${productName} to the cart. Price: ${price}$`);
+    }
 
-        smallImgs.forEach(function (img, index) {
-            img.onclick = function () {
-                fig1.src = img.src;
-            };
-        });
-    </script>
+</script>
+
 </body>
 </html>
