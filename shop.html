@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Adi Boutique</title>
-            <link rel="stylesheet" href="style.css">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adi Boutique</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="start">
      <div class="logo">
          <a href="#"><i class="fas fa-shopping-cart"></i> Adi Boutique</a>
     </div>
@@ -19,14 +19,14 @@
                         <li><a href="contact.html"> Contact</a></li>
                     </ul>
                 </div>
-                <div class="user-actions">
-                    <a href="#"><i class="fas fa-user"></i> Login</a>
+                <div class="actions">
+                    <a href="signup.html"><i class="fas fa-user"></i> Login</a>
                     <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
                 </div>
             </nav>
             
 <section id="page-header" >
-                <div class="hero-content">
+                <div class="paragraph-c">
                     <h2>Take a look at our new autumn collection for Men & Women</h2>
                     <br>
                     <p>Dont waste any more time take a look at our new offers!</p>
@@ -35,25 +35,17 @@
 
 
 <section id="product1" class="selection-p1">
-
-   <div class="pro-container">
-    <div class="pro" onclick="window.location.href='produket.html'">
-        <img src="https://static.pullandbear.net/2/photos//2023/I/0/2/p/3684/507/833/3684507833_2_4_8.jpg?t=1698657995681&imwidth=1125" alt="">
-        <div class="des">
-            <span>adibas</span>
-            <h5>Dress</h5>
-            <div class="star">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i> 
-               <i class="fas fa-star"></i> 
-               <i class="fas fa-star"></i> 
-               <i class="fas fa-star"></i> 
-            </div>
-            <h4>99$</h4>
-        </div>
-        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+    <div class="pro-container" onclick="window.location.href='produket.html?product=1'">
+       <div class="pro">
+          <img src="https://static.pullandbear.net/2/photos//2023/I/0/2/p/3684/507/833/3684507833_2_4_8.jpg?t=1698657995681&imwidth=1125" alt="">
+          <div class="des">
+             <span>adibas</span>
+             <h5>Dress</h5>
+             <h4>99$</h4>
+          </div>
+          <a href="#"><i class="fa fa-shopping-cart"></i></a>
+       </div>
     </div>
-   </div>
    <div class="pro-container">
     <div class="pro"onclick="window.location.href='produket.html'">
         <img src="https://static.pullandbear.net/2/photos//2023/I/0/2/p/8686/518/922/8686518922_2_1_8.jpg?t=1690808671466&imwidth=1125" alt="">
@@ -280,3 +272,47 @@
                <i class="fas fa-star"></i>
                <i class="fas fa-star"></i> 
                <i class="fas fa-star"></i> 
+               <i class="fas fa-star"></i> 
+               <i class="fas fa-star"></i> 
+            </div>
+            <h4>99$</h4>
+        </div>
+        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+    </div>
+   </div>
+</section>
+
+
+<section id="newsletter"class="selection-p1 section-m1">
+    <div class="newstext">
+    <h4>Sign up for more</h4>
+    <p>Get email updates about ur special offers</p>
+
+</div>
+<div class="form">
+    <input type="text" placeholder="Your Email Address">
+    <button class="normal">Sign Up</button>
+</div>
+</section>
+ 
+<footer class="section footer">
+    <div class="col">
+        <a href="#"><i class="fas fa-shopping-cart"></i> Adi Boutique</a>
+        <h4>Contact</h4>
+        <p><strong>Address:  </strong> Lipjan Rr.Lidhja Prizerenit Nr:161</p>
+        <p><strong>Phone:  </strong> 044-111-222   /   045-111-222</p>
+        <p><strong>Schedule:  </strong> Mon-Fri :  09-19 ; Sat : 10-18 </p>
+       </div>
+        <div class="follow">
+            <h4>Follow Us</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        
+    </div>
+</footer>
+</body>
+</html>
