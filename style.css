@@ -197,18 +197,21 @@ button.normal {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  text-align: center;
+  text-align: right ;
 }
 
 #newsletter h4 {
   font-size: 22px;
   font-weight: 600;
   color: white;
+  text-align: right;
+  
 }
 
 #newsletter p {
   font-size: 18px;
   color: white;
+
 }
 
 #newsletter .form {
