@@ -16,6 +16,7 @@
                     <ul>
                         <li><a href="Projekti.html"> Home</a></li>
                         <li><a href="shop.html"> Shop</a></li>
+                        <li><a href="bestsellers.html"> BestSellers</a></li>
                         <li><a href="contact.html"> Contact</a></li>
                     </ul>
                 </div>
@@ -52,7 +53,9 @@
     <section id="contact-form">
         <div class="form-container">
             <h2>Contact Us</h2>
-            <form action="#" method="post">
+            <form action="contact.html" method="post" onsubmit="return validateForm()">
+                <input type="hidden" name="submitted" value="1">
+                
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -66,6 +69,8 @@
             </form>
         </div>
     </section>
+
+    
   
    <section id="newsletter"class="selection-p1 section-m1">
         <div class="newstext">
@@ -98,6 +103,63 @@
         
     </div>
    </footer>
+   <script>
+    function validateForm() {
+        var nameInput = document.getElementById('name').value.trim();
+        var emailInput = document.getElementById('email').value.trim();
+        var messageInput = document.getElementById('message').value.trim();
+
+        if (nameInput === '') {
+            alert('Please enter your name.');
+            return false;
+        }
+
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput)) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        if (messageInput === '') {
+            alert('Please enter your message.');
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $errors = [];
+
+    if (empty($name)) {
+        $errors[] = 'Name is required.';
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Invalid email address.';
+    }
+
+    if (empty($message)) {
+        $errors[] = 'Message is required.';
+    }
+
+    if (empty($errors)) {
+        // Process the form data here (e.g., send email, save to database)
+        // ...
+
+        echo 'Form submitted successfully!';
+    } else {
+        // Display errors
+        echo implode('<br>', $errors);
+    }
+}
+?>
 
 
 </body>
