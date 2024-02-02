@@ -41,7 +41,7 @@ body {
   margin-right: 5px;
 }
 .actions a {
-  color: white;
+  color: black;
   text-decoration: none;
   margin-left: 20px;
   font-size: 1em;
@@ -522,4 +522,198 @@ button:hover {
 }
 #login-form button:hover {
   background: #555;
+}
+
+/* bestsellers.html */
+
+.praragraphB {
+  background-image: url('images/bestsellers.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: rgb(21, 20, 20);
+  background-color: #333;
+  text-align: center;
+  padding: 100px 20px;
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 48%;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    width: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 48%;
+  }
+}
+/* today's deals*/
+.praragraphT {
+  background-image: url('images/todaydeals.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: rgb(21, 20, 20);
+  background-color: #333;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+
+#product1 .container .des h4 {
+  font-size: 1.2em; 
+  color: red; 
+}
+/* Styling for slider container */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling for each slide */
+.swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for slide images */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styling for slide text (optional) */
+.slider-text {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Styling for navigation buttons (optional) */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+/* Styling for pagination (optional) */
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Optional: Custom styles for pagination bullets */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+/*slider */
+.slider {
+  max-width: 1200px;
+  width: 95%;
+  overflow: hidden; /* Hide the horizontal scrollbar */
+}
+
+.sliders {
+  position: relative;
+  overflow: hidden; /* Ensure arrows are hidden if not enough images to scroll */
+}
+
+.sliders .imgs {
+  display: flex;
+  gap: 18px;
+  font-size: 0;
+  overflow: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Enable scroll snapping */
+  -webkit-scroll-snap-type: x mandatory; /* For Safari compatibility */
+}
+
+.sliders .imgs .image {
+  flex: 0 0 auto; /* Ensure images don't shrink */
+  width: 325px; /* Specify the width of each image */
+  height: 400px;
+  object-fit: cover;
+  scroll-snap-align: start; 
+}
+
+.sliders .slide-button {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: #000;
+  font-size: 2.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  top: 50%; 
+  transform: translateY(-50%);
+}
+
+#prev-slide {
+  left: 0;
+}
+
+#next-slide {
+  right: 0;
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+@media (max-width: 768px) {
+  .sliders .imgs .image {
+    width: 100%; 
+    height: auto; 
+  }
+
+  .sliders {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sliders {
+    font-size: 12px; 
+  }
 }
