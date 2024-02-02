@@ -17,6 +17,8 @@
             <ul>
                 <li><a href="Projekti.html"> Home</a></li>
                 <li><a href="shop.html"> Shop</a></li>
+                <li><a href="bestsellers.html"> BestSellers</a></li>
+                <li><a href="todaysdeals.html"> Today's Deals</a></li>
                 <li><a href="contact.html"> Contact</a></li>
             </ul>
         </div>
@@ -28,7 +30,7 @@
     <br>
     <div id="login-form">
         <h2>Login</h2>
-        <form id="loginForm" onsubmit="return validateForm()">
+        <form id="loginForm" action="" method="post" onsubmit="return validateForm()">
             <input type="email" placeholder="Email" id="email" required>
             <br>
             <input type="password" placeholder="Password" id="password" required>
@@ -53,10 +55,56 @@
                 return false;
             }
 
-            alert('Login successful , Welcome Our Friend!'); 
-            return true;
+            var users = authenticateUser(email, password);
+
+            if (users === 'admin') {
+             alert('Welcome our Admin');
+            } else if (users === 'user') {
+             alert('Login successful as user. Welcome!');
+            } else {
+             alert('Please try again.');
+            }
+
+            return false; 
         }
+        function authenticateUser(email, password) {
+            
+            if (email === 'blendi@gmail.com' && password === 'blendi123') {
+                return 'admin';
+            } else if (email === 'user@example.com' && password === 'user1234') {
+                return 'user';
+            } else {
+                return null;
+            }
+        }
+        
     </script>
+   <?php
+   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+       $email = $_POST['email'];
+       $password = $_POST['password'];
+   
+       $authenticatedUser = authenticateUser($email, $password);
+   
+       if ($authenticatedUser === 'admin') {
+           echo 'Welcome our Admin';
+       } else if ($authenticatedUser === 'user') {
+           echo 'Login successful as user. Welcome!';
+       } else {
+           echo 'Please try again.';
+       }
+   }
+   
+   function authenticateUser($email, $password) {
+       if ($email === 'blendi@gmail.com' && $password === 'blendi123') {
+           return 'admin';
+       } else if ($email === 'user@example.com' && $password === 'user1234') {
+           return 'user';
+       } else {
+           return null;
+       }
+   }
+   ?>
    
 
 
